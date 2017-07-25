@@ -1,0 +1,188 @@
+---
+layout: post
+title:  "Rust - Aprendendo uma linguagem de programação sem ter tempo - Parte 1"
+date:   2017-07-23 13:05:36 -0300
+categories: rust
+---
+<div style="text-align: right; color: #777777;"> siga os links para referências </div>
+<br />
+Estamos em uma época na qual as tecnologias de desenvolvimento de software (sejam elas linguagens ou ferramentas), avançam e se multiplicam muito rápido. São muitas as novidades e fica difícil escolher onde investir tempo. Na minha opinião, o Docker é uma das tecnologias mais relevantes dos últimos anos. Começamos a ouvir falar do Clojure através do Nubank, o Elixir do brasileiro José Valim, etc.
+
+Eu moro em Sorocaba, no interior de São Paulo, a cidade possui dois institutos tecnológicos e, apesar disso, as empresas por aqui não valorizam os desenvolvedores, logo, quem quer um salário que faz mais sentido, vai para São Paulo, a capital. São em média 6 horas perdidas no transporte por dia.
+É interessante a necessidade de estar fisicamente no escritório para construir software, sendo que nós humanos já inventamos a VPN, a conexão remota e os comunicadores. O código que produzimos e testamos na nossa máquina, normalmente roda em servidores virtuais que estão… conectados à rede…  
+Além de todo esse tempo para se deslocar, tem o tempo reservado para família.  
+Dedicado para o trabalho são 15 horas diariamente.
+
+
+### Aprendendo sem ter tempo
+
+
+Rust foi lançado com um [livro][rust-lang-book], que possui exemplos e explicações de todos os conceitos que envolvem a linguagem. No deslocamento de volta para casa, leio/releio um pouco, um ou dois tópicos por dia. Então eu tenho tempo? Para teoria sim, mas não tenho espaço para  prática e, pelo menos comigo, sem prática a teoria se perde.  
+No começo, testava os exemplos dos livros, mas mesmo assim, a teoria se perde. Então decidi que era preciso ter um problema para resolver.  
+Baixei a [especificação do protocolo AMQP][amqp-spec], a princípio é algo bem confuso mas aos poucos se torna simples, e tem muitos problemas a serem resolvidos até conseguir produzir/consumir mensagens, desde desenvolver parsers, gerenciadores de conexões, comunicação via socket etc. O legal é que um protocolo nos faz rever conceitos apresentados no começo dos cursos de informática, mas que muitas linguagens nos protegem deles.  
+Foi então que criei o [transdduction][git-repo-transdduction]*, uma implementação do protocolo AMQP (que não faz nada ainda e não sei se um dia irá fazer) no github. Às vezes fico mais de uma semana sem escrever código [Rust][rust-lang-site], o github ajuda, cadastro as Issues com tudo que deve ser feito. Com pequenas issues é possível ficar dias sem programar e saber de onde continuar quando voltar. Novos conceitos aprendidos podem virar issues relacionadas (ou não) às já existentes.
+
+
+### Por que [Rust][rust-lang-site] ?
+
+
+Depois de anos programando em C#, tendo contato com tecnologias .NET e tendo condições de aprender durante o trabalho por demanda as coisas novas desse ecossistema, decidi que queria aprender uma nova linguagem, mas uma que ajudasse a pensar no problema a ser resolvido de forma diferente. Também não estava interessado em linguagens que usam máquinas virtuais. Queria algo como o C/C++, mas não C/C++.  
+Ao começar a contribuir com a [Mozilla][moz-site] e acompanhar alguns [blogs][moz-blog], tive notícias da linguagem [Rust][rust-lang-site], uma linguagem de programação de sistemas que tem como o principal sponsor a própria [Mozilla][moz-site].
+<br />
+- [Rust][rust-lang-site] garante a segurança da memória: em tempo de compilação, o programa é protegido contra segment fault, ou seja, se você programar uma situação que pode resultar em falha de segmentação, o programa não compila.
+
+```rust
+    fn main() {
+        let my_vec = vec![1, 2, 3];
+        drop(my_vec);
+        println!("{:?}", my_vec);
+    }
+```
+O compilador retorna as seguintes mensagens:
+
+```
+error[E0382]: use of moved value: `my_vec`
+ --> blogtest.rs:4:22
+  |
+3 |     drop(my_vec);
+  |          ------ value moved here
+4 |     println!("{:?}", my_vec);
+  |                      ^^^^^^ value used here after move
+  |
+  = note: move occurs because `my_vec` has type `std::vec::Vec<i32>`, which does not implement the `Copy` trait
+
+error: aborting due to previous error(s)
+```
+
+Ao remover a chamada para drop(), o código compila normalmente.
+<br />
+- Além de [imutabilidade][book-mut-ref] no binding, [Rust][rust-lang-site] garante imutabilidade interna das estruturas.
+
+```rust
+#[derive(Debug)]
+struct Point {
+    x: i32,
+    y: i32
+}
+
+fn main() {
+    let point = Point { x: 1, y: 1 };
+    point = Point { x: 42, y: 42 };
+    println!("{:?}", point);
+}
+```
+
+O compilador exibe as seguintes mensagens:
+
+```
+ex-dev@linux-qzig:~> rustc blogtest.rs 
+error[E0384]: re-assignment of immutable variable `point`
+ --> blogtest.rs:9:5
+  |
+8 |     let point = Point { x: 1, y: 1 };
+  |         ----- first assignment to `point`
+9 |     point = Point { x: 42, y: 42 };
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ re-assignment of immutable variable
+
+error: aborting due to previous error(s)
+```
+
+Ao tentar alterar o valor do campo da estrutura temos:
+
+```rust
+    let point = Point { x: 1, y: 1 };
+    point.x = 2;
+```
+
+```
+ex-dev@linux-qzig:~> rustc blogtest.rs 
+error[E0594]: cannot assign to immutable field `point.x`
+ --> blogtest.rs:9:5
+  |
+8 |     let point = Point { x: 1, y: 1 };
+  |         ----- consider changing this to `mut point`
+9 |     point.x = 2;
+  |     ^^^^^^^^^^^ cannot mutably borrow immutable field
+
+error: aborting due to previous error(s)
+```
+
+O compilador do [Rust][rust-lang-site] dá as dicas da maioria dos problemas, para fazer esse programa compilar, devemos definir o binding como mutável:
+
+```rust
+    let mut point = Point { x: 1, y: 1 };
+    point = Point { x: 42, y: 42 };
+```
+
+```rust
+    let mut point = Point { x: 1, y: 1 };
+    point.x = 2;
+```
+<br />
+- [The Ownership System][book-t-o-s] - A Grande sacada de [Rust][rust-lang-site]:  
+O Sistema de Ownership do [Rust][rust-lang-site] é parte fundamental da linguagem, esse sistema é o que garante a Segurança da Memória e a Segurança no uso de threads ([Fearless Concurrency][book-f-l-c]).  
+Em [Rust][rust-lang-site], os bindings são descartados na ordem inversa de declaração, ao final do bloco que é o escopo onde são declaradas. Quando chamamos uma função e a passamos como parâmetro o binding que temos no escopo atual, o escopo da função chamada se torna proprietária do binding:  
+
+```rust
+use std::vec::Vec;
+
+fn take_vector(x: Vec<i32>) {
+    // x é descartado aqui.
+}
+
+fn take_int(z: i32) {
+    // z é descartado aqui.
+}
+
+fn main() {
+    let x = vec![1, 2, 3];
+    take_vector(x);
+    let foo = 42;
+    take_int(foo);
+    let y = "bar";
+
+    println!("{:?}", foo);
+    println!("{:?}", x);
+
+    // 1º y é descartado.
+    // 2º foo é descartado.
+}
+```
+
+Esse código não compila. o binding x é passado como parâmetro para a função take_vector, que se torna proprietária do binding x, x é então descartado ao final da função take_vector. Temos o seguinte erro:
+
+```
+ex-dev@linux-qzig:~> rustc blogtest.rs 
+error[E0382]: use of moved value: `x`
+  --> blogtest.rs:18:22
+   |
+13 |     let y = take_vector(x);
+   |                         - value moved here
+...
+18 |     println!("{:?}", x);
+   |                      ^ value used here after move
+   |
+   = note: move occurs because `x` has type `std::vec::Vec<i32>`, which does not implement the `Copy` trait
+
+error: aborting due to previous error(s)
+```
+Note que o erro de compilação se refere somente à x, não há referência à foo, foo é do tipo i32 que implementa o trait Copy.  
+<br />
+
+<br />
+Esses são alguns pontos interessantes do [Rust][rust-lang-site], espero escrever mais alguns posts falando sobre a linguagem.  
+<br />  
+
+______________________________________________________________  
+
+\* Referência à Transdução de Sinal, tópico da Biologia Molecular.
+
+[rust-lang-site]: https://www.rust-lang.org
+[rust-lang-book]: https://doc.rust-lang.org/book/
+[moz-site]: https://www.mozilla.org
+[moz-blog]: https://blog.mozilla.org
+[amqp-spec]: http://www.amqp.org/specification/0-9-1/amqp-org-download
+[git-repo-transdduction]: https://github.com/MicroarrayTecnologia/transdduction
+[book-mut-ref]: https://doc.rust-lang.org/book/second-edition/ch03-01-variables-and-mutability.html
+[book-t-o-s]: https://doc.rust-lang.org/book/second-edition/ch04-01-what-is-ownership.html
+[book-f-l-c]: https://doc.rust-lang.org/book/second-edition/ch16-00-concurrency.html#fearless-concurrency
