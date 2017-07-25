@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Rust - Aprendendo uma linguagem de programação sem ter tempo - Parte 1"
-date:   2017-07-23 13:05:36 -0300
+title:  "Rust - Aprendendo uma linguagem de programação sem ter tempo"
+date:   2017-07-24 23:11:36 -0300
 categories: rust
 ---
 <div style="text-align: right; color: #777777;"> siga os links para referências </div>
@@ -168,6 +168,50 @@ error: aborting due to previous error(s)
 ```
 Note que o erro de compilação se refere somente à x, não há referência à foo, foo é do tipo i32 que implementa o trait Copy.  
 <br />
+A correção desse erro de compilação irá depender do objetivo da função chamada.  
+Se a função usará o conteúdo do binding, de forma que não faz sentido para essa função descartar esse binding ao fim do uso, podemos "emprestar" o binding para a função e devolvê-lo após o uso:
+
+```rust
+use std::vec::Vec;
+
+fn take_vector(x: &Vec<i32>) {
+    //&Vec<i32> pega uma referência de um vetor.
+    ...
+    //Devolve a referência do vetor (não há descarte do binding).
+}
+
+fn main() {
+    let x = vec![1, 2, 3];
+    take_vector(&x);
+    let foo = 42;
+    take_int(foo);
+    let y = "bar";
+
+    println!("{:?}", foo);
+    println!("{:?}", x);
+
+    // 1º y é descartado.
+    // 2º foo é descartado.
+    // 3º x é descartado.
+}
+```
+
+Para os casos onde faz sentido a função chamada descartar o binding, simplesmente não usar um binding após move-lo resolve o erro de compilação:
+```rust
+fn main() {
+    let x = vec![1, 2, 3];
+    take_vector(x);
+    let foo = 42;
+    take_int(foo);
+    let y = "bar";
+    
+    println!("{:?}", foo);
+    //println!("{:?}", x);
+
+    // 1º foo é descartado.
+    // 2º y é descartado.
+}
+```
 
 <br />
 Esses são alguns pontos interessantes do [Rust][rust-lang-site], espero escrever mais alguns posts falando sobre a linguagem.  
