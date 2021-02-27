@@ -30,7 +30,7 @@ url: "www.allansilva.com.br"
 github_username:  allan-silva
 
 # Build settings
-theme: jekyll-theme-chirpy
+# theme: jekyll-theme-chirpy
 remote_theme: cotes2020/jekyll-theme-chirpy
 plugins:
   - jekyll-feed
