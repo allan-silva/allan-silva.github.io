@@ -1,0 +1,263 @@
+[{
+    "title": "Mozilla - Bug 1495714 - 502 error, corrupted release blob: \"Caught non-fatal exception finding fileUrl for partial update\"",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/837"
+    }, {
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1495714"
+    }]
+  },
+  {
+    "title": "Mozilla - Bug 1447315 - fix py.test warnings in backend tests from upgraded dependencies",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/798"
+    }, {
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1447315"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Bug 1447318 - make code python 3 compatible",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/621"
+    }, {
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1447318"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Fix CSRF validation",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/646"
+    }, {
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/658"
+    }]
+  },
+
+  {
+    "title": "Mozilla - [security bug] Bug 1457905",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/594"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Upgrade SqlAlchemy + sa-migrate + mysql connector",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/564"
+    }, {
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1303424"
+    }, {
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1447317"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Bug 1433146 - Add support for lists of distributions",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/467"
+    }, {
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/510"
+    },{
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1433146"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Bug 1307488 - Have pulse work with one job at a time, since that's how we're using it",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla/treeherder/pull/3239"
+    }, {
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1307488"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Bug 1307169 - implement emergency shut-off",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/460"
+    }, {
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/450"
+    },{
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1307169"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Use spec-synthase package (meu pacote)",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/453"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Bug 1376304 - Refactor Admin API to use the common endpoints between Public and Admin API",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/380"
+    }, {
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1376304"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Bug 1391294 - return 404s instead of empty xml in public api",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/373"
+    }, {
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1391294"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Remove queryVersion handle from validator",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/370"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Bug 1325377 - Public API to Balrog's database",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/320"
+    }, {
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/314"
+    },{
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/276"
+    },{
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1325377"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Bug 1031597 - Tree Status should send pulse notifications that the tree is opening or closing",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla-releng/services/pull/188"
+    }, {
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1031597"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Bug 1278539 - refactor history table backend code",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla/balrog/pull/230"
+    }, {
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1278539"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Bug 1251309 - Use union instead of VIEW for ProductReleases table",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla-releng/ship-it/pull/142"
+    }, {
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1251309"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Bug 1234832 - Introduce a new page to be able to edit a release",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla-releng/ship-it/pull/56"
+    }, {
+      "description": "PR",
+      "link": "https://github.com/mozilla-releng/ship-it/pull/52"
+    },{
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1234832"
+    }]
+  },
+
+  {
+    "title": "Mozilla -Reorder the js to fix suggestions",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla-releng/ship-it/pull/51"
+    }]
+  },
+
+  {
+    "title": "Mozilla: Bug 1168381 - ship-it performances: too many SQL queries",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla-releng/ship-it/pull/47"
+    }, {
+      "description": "PR",
+      "link": "https://github.com/mozilla-releng/ship-it/pull/46"
+    },{
+      "description": "PR",
+      "link": "https://github.com/mozilla-releng/ship-it/pull/44"
+    },{
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1168381"
+    }]
+  },
+
+  {
+    "title": "Mozilla - Bug 1058773 - ship-it: Please sort the operating system by name",
+    "status": "DONE",
+    "links": [{
+      "description": "PR",
+      "link": "https://github.com/mozilla-releng/ship-it/pull/43"
+    }, {
+      "description": "Bugzilla",
+      "link": "https://bugzilla.mozilla.org/show_bug.cgi?id=1058773"
+    }]
+  }
+]

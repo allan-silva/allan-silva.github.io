@@ -1,0 +1,50 @@
+<div>
+  <h1>Contribui&ccedil;&otilde;es - Mozilla</h1>
+
+  <div>
+    <h2>WIP</h2>
+    <img src="{{ site.baseurl }}/assets/img/redpanda.jpg" alt="Panda vermelho dormindo" />
+
+    {% for contribution in site.data.contributions_mozilla %}
+      {% if contribution.status == "WIP" %}
+        <div class="post-preview">
+          <h3>{{contribution.title}}</h3>
+
+          {% for link in contribution.links %}
+            <ul>
+              <li>
+                <h4>{{link.description}}</h4>
+                <a href="{{link.link}}">
+                  {{link.link}}
+                </a>
+              </li>
+            </ul>
+          {% endfor %}
+        </div>
+        {% endif %}
+    {% endfor %}
+  </div>
+
+  <div>
+    <h2>DONE</h2>
+
+    {% for contribution in site.data.contributions_mozilla %}
+      {% if contribution.status == "DONE" %}
+        <div class="post-preview" style="border-bottom-style:dashed; border-bottom-width: 1px;">
+          <h3>{{contribution.title}}</h3>
+
+          {% for link in contribution.links %}
+            <ul>
+              <li>
+                <h4>{{link.description}}</h4>
+                <a href="{{link.link}}">
+                  {{link.link}}
+                </a>
+              </li>
+            </ul>
+          {% endfor %}
+        </div>
+        {% endif %}
+    {% endfor %}
+  </div>
+</div>
