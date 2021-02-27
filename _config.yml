@@ -22,9 +22,7 @@ title: Allan Silva - Contribuições e Projetos Pessoais
 avatar: assets/img/fotoperfilslack.jpeg
 email: allan@allansilva.com.br
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Open source é a melhor forma de se libertar da maioria dos softwares entediantes que somos pagos para desenvolver.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.allansilva.com.br"
 github_username:  allan-silva
