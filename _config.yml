@@ -30,7 +30,7 @@ url: "www.allansilva.com.br"
 github_username:  allan-silva
 
 # Build settings
-theme: jekyll-theme-dinky
+theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
 
