@@ -7,7 +7,7 @@
 
     {% for contribution in site.data.contributions_mozilla %}
       {% if contribution.status == "WIP" %}
-        <div class="post-preview">
+        <div class="post-preview" style="border-bottom-style:dashed; border-bottom-width: 1px;">
           <h3>{{contribution.title}}</h3>
 
           {% for link in contribution.links %}
