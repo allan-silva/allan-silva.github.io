@@ -1,7 +1,7 @@
 [
     {
     "title": "Mozilla - return http header with release name(s) used to construct response",
-    "status": "WIP",
+    "status": "DONE",
     "links": [ {
       "description": "Issue",
       "link": "https://github.com/mozilla-releng/balrog/issues/1092"
