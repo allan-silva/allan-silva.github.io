@@ -1,5 +1,18 @@
 [
     {
+    "title": "coreutils - wc: option --files0-from is not yet implemented",
+    "status": "WIP",
+    "links": [ {
+      "description": "Issue",
+      "link": "https://github.com/uutils/coreutils/issues/2932"
+    },
+     {
+      "description": "PR",
+      "link": "https://github.com/uutils/coreutils/pull/2966"
+    }]
+  },
+
+    {
     "title": "Mozilla - return http header with release name(s) used to construct response",
     "status": "DONE",
     "links": [ {
