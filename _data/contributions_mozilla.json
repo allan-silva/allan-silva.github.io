@@ -1,7 +1,24 @@
 [
+        {
+    "title": "coreutils - ptx: Implement context_regex (-S) and its default values",
+    "status": "WIP",
+    "links": [ {
+      "description": "Issue",
+      "link": "https://github.com/uutils/coreutils/issues/3183"
+    }]
+  },
+
+      {
+    "title": "coreutils - ptx: Do not use regex when -W options is not provided",
+    "status": "WIP",
+    "links": [ {
+      "description": "Issue",
+      "link": "https://github.com/uutils/coreutils/issues/3142"
+    }]
+  },
     {
     "title": "coreutils - wc: option --files0-from is not yet implemented",
-    "status": "WIP",
+    "status": "DONE",
     "links": [ {
       "description": "Issue",
       "link": "https://github.com/uutils/coreutils/issues/2932"
