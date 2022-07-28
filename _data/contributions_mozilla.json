@@ -1,5 +1,18 @@
 [
-        {
+  {
+    "title": "Mozilla - Error on docker-compose up - apt-get: not found",
+    "status": "WIP",
+    "links": [ {
+      "description": "Issue",
+      "link": "https://github.com/mozilla-releng/balrog/issues/2601"
+    },{
+      "description": "PR",
+      "link": "https://github.com/mozilla-releng/balrog/pull/2602"
+    }]
+  },
+
+
+  {
     "title": "coreutils - ptx: Implement context_regex (-S) and its default values",
     "status": "WIP",
     "links": [ {
