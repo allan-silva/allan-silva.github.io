@@ -1,7 +1,8 @@
 [
   {
     "title": "Mozilla - Error on docker-compose up - apt-get: not found",
-    "status": "WIP",
+    "status": "DONE",
+    "date": "2022-07",
     "links": [ {
       "description": "Issue",
       "link": "https://github.com/mozilla-releng/balrog/issues/2601"
@@ -11,10 +12,10 @@
     }]
   },
 
-
   {
     "title": "coreutils - ptx: Implement context_regex (-S) and its default values",
     "status": "WIP",
+    "date": "",
     "links": [ {
       "description": "Issue",
       "link": "https://github.com/uutils/coreutils/issues/3183"
@@ -24,6 +25,7 @@
       {
     "title": "coreutils - ptx: Do not use regex when -W options is not provided",
     "status": "WIP",
+    "date": "",
     "links": [ {
       "description": "Issue",
       "link": "https://github.com/uutils/coreutils/issues/3142"
@@ -32,6 +34,7 @@
     {
     "title": "coreutils - wc: option --files0-from is not yet implemented",
     "status": "DONE",
+    "date": "",
     "links": [ {
       "description": "Issue",
       "link": "https://github.com/uutils/coreutils/issues/2932"
@@ -45,6 +48,7 @@
     {
     "title": "Mozilla - return http header with release name(s) used to construct response",
     "status": "DONE",
+    "date": "",
     "links": [ {
       "description": "Issue",
       "link": "https://github.com/mozilla-releng/balrog/issues/1092"
@@ -54,6 +58,7 @@
     {
     "title": "Mozilla - Bug 1495714 - 502 error, corrupted release blob: \"Caught non-fatal exception finding fileUrl for partial update\"",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla/balrog/pull/837"
@@ -65,6 +70,7 @@
   {
     "title": "Mozilla - Bug 1447315 - fix py.test warnings in backend tests from upgraded dependencies",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla/balrog/pull/798"
@@ -77,6 +83,7 @@
   {
     "title": "Mozilla - Bug 1447318 - make code python 3 compatible",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla/balrog/pull/621"
@@ -89,6 +96,7 @@
   {
     "title": "Mozilla - Fix CSRF validation",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla/balrog/pull/646"
@@ -101,6 +109,7 @@
   {
     "title": "Mozilla - [security bug] Bug 1457905",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla/balrog/pull/594"
@@ -110,6 +119,7 @@
   {
     "title": "Mozilla - Upgrade SqlAlchemy + sa-migrate + mysql connector",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla/balrog/pull/564"
@@ -125,6 +135,7 @@
   {
     "title": "Mozilla - Bug 1433146 - Add support for lists of distributions",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla/balrog/pull/467"
@@ -140,6 +151,7 @@
   {
     "title": "Mozilla - Bug 1307488 - Have pulse work with one job at a time, since that's how we're using it",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla/treeherder/pull/3239"
@@ -152,6 +164,7 @@
   {
     "title": "Mozilla - Bug 1307169 - implement emergency shut-off",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla/balrog/pull/460"
@@ -167,6 +180,7 @@
   {
     "title": "Mozilla - Use spec-synthase package (meu pacote)",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla/balrog/pull/453"
@@ -176,6 +190,7 @@
   {
     "title": "Mozilla - Bug 1376304 - Refactor Admin API to use the common endpoints between Public and Admin API",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla/balrog/pull/380"
@@ -188,6 +203,7 @@
   {
     "title": "Mozilla - Bug 1391294 - return 404s instead of empty xml in public api",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla/balrog/pull/373"
@@ -200,6 +216,7 @@
   {
     "title": "Mozilla - Remove queryVersion handle from validator",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla/balrog/pull/370"
@@ -209,6 +226,7 @@
   {
     "title": "Mozilla - Bug 1325377 - Public API to Balrog's database",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla/balrog/pull/320"
@@ -227,6 +245,7 @@
   {
     "title": "Mozilla - Bug 1031597 - Tree Status should send pulse notifications that the tree is opening or closing",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla-releng/services/pull/188"
@@ -239,6 +258,7 @@
   {
     "title": "Mozilla - Bug 1278539 - refactor history table backend code",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla/balrog/pull/230"
@@ -251,6 +271,7 @@
   {
     "title": "Mozilla - Bug 1251309 - Use union instead of VIEW for ProductReleases table",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla-releng/ship-it/pull/142"
@@ -263,6 +284,7 @@
   {
     "title": "Mozilla - Bug 1234832 - Introduce a new page to be able to edit a release",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla-releng/ship-it/pull/56"
@@ -278,6 +300,7 @@
   {
     "title": "Mozilla -Reorder the js to fix suggestions",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla-releng/ship-it/pull/51"
@@ -287,6 +310,7 @@
   {
     "title": "Mozilla: Bug 1168381 - ship-it performances: too many SQL queries",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla-releng/ship-it/pull/47"
@@ -305,6 +329,7 @@
   {
     "title": "Mozilla - Bug 1058773 - ship-it: Please sort the operating system by name",
     "status": "DONE",
+    "date": "",
     "links": [{
       "description": "PR",
       "link": "https://github.com/mozilla-releng/ship-it/pull/43"
