@@ -1,5 +1,17 @@
 [
   {
+    "title": "Add optional \"comment\" field for emergency_shutoff",
+    "status": "DONE",
+    "date": "2022-07",
+    "links": [ {
+      "description": "Issue",
+      "link": "https://github.com/mozilla-releng/balrog/issues/1862"
+    },{
+      "description": "PR",
+      "link": "https://github.com/mozilla-releng/balrog/pull/2604"
+    }]
+  },
+  {
     "title": "Mozilla - Error on docker-compose up - apt-get: not found",
     "status": "DONE",
     "date": "2022-07",
